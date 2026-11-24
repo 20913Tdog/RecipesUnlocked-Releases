@@ -1,4 +1,4 @@
-name: Wowhead-only catalog updater (paused for rebuild)
+name: Recipes Unlocked release updater (paused)
 
 on:
   workflow_dispatch:
@@ -10,8 +10,8 @@ jobs:
   source-policy:
     runs-on: ubuntu-latest
     steps:
-      - name: Require the new Wowhead-only import
+      - name: Require a validated release pipeline
         run: |
-          echo 'Updater disabled: the previous catalog and collector do not satisfy the Wowhead-only source policy.'
-          echo 'No catalog download, fallback, source ZIP execution or release publication is permitted.'
+          echo 'Updater paused: development uses the ForeverDB Cooking slice and a separate Wowhead reconciliation prototype.'
+          echo 'Use the private development build and direct deployment. No release or historical source ZIP is executed here.'
           exit 1

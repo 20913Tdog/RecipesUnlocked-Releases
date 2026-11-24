@@ -1,16 +1,13 @@
 # Recipes Unlocked releases
 
-**Catalog source policy: Wowhead Forever only.**
+Development currently uses a versioned Cooking slice from the maintained
+[ForeverDB](https://github.com/foreverfraddons/forever-db) release, with native
+WoW schematics and tooltips. A separate Wowhead Forever connector prototypes
+field comparisons and reports conflicts before any overlay is applied.
 
-Automatic catalog updates are disabled while the catalog is rebuilt from new
-Wowhead Forever data. The former collector and its fallback sources are retired.
-The updater must not execute the builder from a historical release source ZIP.
+Public automatic releases remain paused while the new data/release path is
+validated. Earlier packages have been withdrawn from publication. The release
+updater does not download or execute historical source packages.
 
-Existing release assets are historical builds and do not satisfy this new data
-policy. They are not a newly collected or verified Wowhead-only catalog.
-
-During development, automatic updates in WowUp should remain disabled. Development
-deployment continues directly to the local WoW AddOns directory.
-
-No new release will be published until the Wowhead-only import, separate sold-by
-and dropped-by relations, source provenance and validation are ready.
+During active development, installations go directly to the configured WoW
+AddOns folder. Keep automatic WowUp updates disabled for this addon.

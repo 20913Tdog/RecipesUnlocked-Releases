@@ -10,6 +10,8 @@ Choose WoW Forever → **Install from URL** → paste:
 
 https://github.com/20913Tdog/RecipesUnlocked-Releases
 
+After installing new profession modules, restart WoW completely before opening them.
+
 For manual installation download the latest `RecipesUnlocked-…-forever.zip`. During active development keep auto-updates disabled after the successful one-time WowUp test; development installs continue directly to D:.
 
 ## Releases and sources

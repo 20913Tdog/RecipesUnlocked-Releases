@@ -1,4 +1,4 @@
-name: Recipes Unlocked release updater (paused)
+name: Recipes Unlocked releases (development pause)
 
 on:
   workflow_dispatch:
@@ -7,11 +7,10 @@ permissions:
   contents: read
 
 jobs:
-  source-policy:
+  development:
     runs-on: ubuntu-latest
     steps:
-      - name: Require a validated release pipeline
-        run: |
-          echo 'Updater paused: development uses the ForeverDB Cooking slice and a separate Wowhead reconciliation prototype.'
-          echo 'Use the private development build and direct deployment. No release or historical source ZIP is executed here.'
-          exit 1
+      - run: |
+          echo 'Only ForeverDB is an allowed data provider.'
+          echo 'The private development pipeline checks all twelve professions daily.'
+          echo 'Development deployments remain local; automatic public publication is paused.'

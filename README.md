@@ -1,19 +1,43 @@
-# Recipes Unlocked releases
+# Recipes Unlocked — WoW Forever
 
-Install the addon with WowUp CF using **Install from URL**:
+Native profession book with unlearned recipes, item and reagent tooltips,
+acquisition sources, faction filtering, navigation and drop-chance sorting.
+All twelve professions have separate load-on-demand data modules.
+
+## Install and update with WowUp CF
+
+Select **WoW Forever → Install from URL** and paste:
+
 https://github.com/20913Tdog/RecipesUnlocked-Releases
 
-The current development version uses only ForeverDB and has independent
-load-on-demand modules for all twelve professions. Data from ForeverDB.net:
-https://foreverdb.net and https://github.com/foreverfraddons/forever-db.
-Wowhead is only a copyable link in the UI, never a data source.
+Enable automatic updates for **Recipes Unlocked**. WowUp downloads the latest
+complete addon package during its update checks. If WoW is running, use
+`/reload` after an update; restart WoW if new addon folders were installed.
+No Python installation or local updater helper is required.
 
-The private development pipeline checks ForeverDB daily, validates and tests
-the complete generation, and produces addon/source ZIPs. During active
-development installation continues directly into the local WoW AddOns folder.
-Public automatic releases remain paused; disable WowUp automatic updates for
-this addon while testing local development builds.
+For manual installation, download the `RecipesUnlocked-…-forever.zip` asset
+from the latest release and extract its addon folders into `Interface/AddOns`.
+The separate `-sources.zip` is for editable sources and license information,
+not for installation. `release.json` identifies the Forever installation ZIP
+for WowUp.
 
-Future releases contain an addon ZIP and its corresponding source/license
-ZIP. Original addon and build-tool code: MIT. Imported data retains its
-upstream licences and notices. Existing test releases may predate this migration.
+## Data and releases
+
+Primary data: [ForeverDB.net](https://foreverdb.net) and the
+[official ForeverDB database](https://github.com/foreverfraddons/forever-db).
+Wowhead Forever supplements genuinely missing fields before packaging;
+known ForeverDB facts are retained. Missing facts remain marked as `???`.
+The game makes no external HTTP requests.
+
+The private build pipeline checks data twice daily at **08:17 and 20:17 UTC**,
+one hour after ForeverDB's scheduled builds. GitHub may delay scheduled jobs.
+Changed packages are released after source validation and the Python/Lua test
+suite pass. Uploads are staged privately and SHA-256 checked before publication.
+Unchanged packages do not create another release. Failed checks or uploads
+leave the last public release available.
+
+This repository hosts release documentation and finished packages. Development
+remains separate. Each release includes the addon, corresponding editable
+sources, WowUp metadata and SHA-256 checksums. Original addon/build-tool code:
+MIT. Imported data retains the upstream licenses and attribution notices
+included in both downloads.
